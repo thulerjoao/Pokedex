@@ -1,49 +1,17 @@
-const express = require('express')
-const path = require('path')
-const app = express()
+const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
+const app = express();
+const path = require('path');
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname,"public")));
+app.use(express.urlencoded());
 
 const pokedex = [
-  {numero: "025",
-    nome: "pikashu",
-    tipo: "Electric",
-    imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-    descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
-    altura:"0.4 m",
-    peso: "6.0 kg",
-    categoria: "Mouse",
-    habilidade: "Static"},
-    {numero: "025",
-    nome: "pikashu",
-    tipo: "Electric",
-    imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-    descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
-    altura:"0.4 m",
-    peso: "6.0 kg",
-    categoria: "Mouse",
-    habilidade: "Static"},
-    {numero: "025",
-    nome: "pikashu",
-    tipo: "Electric",
-    imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-    descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
-    altura:"0.4 m",
-    peso: "6.0 kg",
-    categoria: "Mouse",
-    habilidade: "Static"},
-    {numero: "025",
-    nome: "pikashu",
-    tipo: "Electric",
-    imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-    descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
-    altura:"0.4 m",
-    peso: "6.0 kg",
-    categoria: "Mouse",
-    habilidade: "Static"},
-    {numero: "025",
-    nome: "pikashu",
+  { id: 1,
+    nome: "Pikashu",
     tipo: "Electric",
     imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
     descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
@@ -55,8 +23,32 @@ const pokedex = [
 
 
 //ROTAS
-app.get('/', function (req, res) {
-  res.render("index", {pokedex});
+let pokemon = undefined;
+
+app.post('/', (req, res) => {  
+  res.render("index", {pokedex, pokemon});
 })
 
-app.listen(3000, () => console.log("Servidor rodando em http://localhost:3000"))
+app.post('/add', (req, res) =>{
+  const pokemon = req.body;
+  pokemon.id = pokedex.length + 1;
+  pokedex.push(pokemon);
+  res.redirect("/");
+});
+
+app.post("/info/:id"), (req, res) => {
+  const id = +req.params.id;
+  pokemon = pokedex.find(pokemon => pokemon.id === id);
+  res.redirect("/");
+}
+
+app.post("/update/:id", (req, res) => {
+  const id = +req.params.id-1;
+  const newPokemon = req.body;
+  pokedex[id] = newPokemon;
+  pokemon = undefined;
+
+  res.redirect("/");
+});
+
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`))
