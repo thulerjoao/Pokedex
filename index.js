@@ -3,11 +3,13 @@ const req = require('express/lib/request');
 const res = require('express/lib/response');
 const app = express();
 const path = require('path');
+
 const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname,"public")));
-app.use(express.urlencoded());
+
+app.use(express.urlencoded({ extended: true }))
 
 const pokedex = [
   { id: 1,
@@ -25,11 +27,11 @@ const pokedex = [
 //ROTAS
 let pokemon = undefined;
 
-app.post('/', (req, res) => {  
+app.get('/', (req, res) => {  
   res.render("index", {pokedex, pokemon});
 })
 
-app.post('/add', (req, res) =>{
+app.get('/add', (req, res) =>{
   const pokemon = req.body;
   pokemon.id = pokedex.length + 1;
   pokedex.push(pokemon);
