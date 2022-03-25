@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhes.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png">
+    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
+    <title>Pokedéx</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="gg-pokemon"></i>
+            <a href="/" id="btn-home">Home</a>
+        </div>    
+        <div id="header">
+            <h1>DETALHES DO POKEMON</h1>
+        </div>
+    </header>
+    <main>
+        <section id="detalhes">
+            <div id="img">
+                <%pokemon.forEach((item =>{%>
+                <img src="<%=item.imagem%>" alt="Imagem não encontrada">
+                <%}))%>
+            </div>
+            <div class="card">
+                <%pokemon.forEach((item =>{%>
+                    <h2><%=item.nome%></h2>
+                    <p>Tipo: <%=item.tipo%></p>
+                    <p>Descricao: <%=item.descricao%></p>
+                    <p>Altura: <%=item.altura%></p>
+                    <p>Peso: <%=item.peso%></p>
+                    <p>Categoria: <%=item.categoria%></p>
+                    <p>Habilidade: <%=item.habilidade%></p>
+                <%}))%>
+                
+            
+            </div>
+        </section> 
+
+
+
+    </main>
+    <footer>
+        <p>
+            Confira mais projetos -
+            <a href="https://github.com/thulerjoao">github.com/thulerjoao </a>
+            - 2022            
+        </p>
+    </footer>
+</body>
+</html>

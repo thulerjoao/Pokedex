@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleCadastro.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png">
+    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
+    <title>Pokedéx</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="gg-pokemon"></i>
+            <a href="/" id="btn-home">Home</a>
+        </div>    
+        <div id="header">
+            <h1>CADASTRO DE POKEMONS</h1>
+        </div>
+    </header>
+<main>
+    <section id="cadastroGeral">           
+            
+        <div id="cadastro">
+            <h2>Cadastro:</h2>
+            
+            <form action="/cadastro" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao">
+
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" name="tipo">
+
+                <label for="tipo">Altura</label>
+                <input type="text" id="Altura" name="Altura">
+
+                <label for="tipo">Peso</label>
+                <input type="text" id="Peso" name="Peso">
+
+                <label for="tipo">Categoria</label>
+                <input type="text" id="Categoria" name="Categoria">
+
+                <label for="imagem">Link da Imagem</label>
+                <input type="text" id="imagem" name="imagem">
+
+                <button id="btnCadastro" type="submit">Enviar</button>
+                
+            </form>
+        </div>
+        <div>
+            <img src="/img/pngegg.png" alt="imagem cadastro">
+        </div>   
+    </section> 
+</main>
+<footer>
+    <p>
+        Confira mais projetos -
+        <a href="https://github.com/thulerjoao">github.com/thulerjoao </a>
+        - 2022            
+    </p>
+</footer>
+<script type='text/javascript' src="/cadastro.js"></script>
+</body>
+</html>

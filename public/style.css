@@ -6,41 +6,130 @@
     font-family: roboto, arial;
     
 }
+
 body{
-    background: linear-gradient(0.75turn, #ff0000, #fffb01);
+    background: linear-gradient(.75turn, #F5DA2F, #D4963B, #EB6F4D, #D43B95, #9E45F7);
+    background-size: 500% 500%;
+    animation: colors 15s ease infinite;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #header{
-    margin: 1rem;
-    border: 2px solid black;
+    padding-top: 3rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     background: linear-gradient(0.25turn, rgb(66, 57, 57), rgb(59, 45, 68));
     color: rgb(255, 238, 0);
-    text-align: center;
 }
 h1{
+    text-align: center;
     font-family: Gloria Hallelujah, Roboto, arial;
-    font-size: 5rem;
+    font-size: 7rem;
     text-shadow: 5px 5px black;
     transition: all .1s ease-in-out;
 }
-h1:hover{
-    transform: scale(1.1);
-    transition: all .2s ease-in-out;
+
+
+#menu a{
+    text-decoration: none;
+    color: black;
+}
+#menu{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    background: linear-gradient(0.30turn, rgb(255, 238, 0), rgb(255, 208, 0));  
+    padding: 0rem;
+    border-bottom: 1px solid black;     
+}
+
+.gg-pokemon{
+    position: relative;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+
+#btn-home {
+    border-radius: 1rem;
+    font-style: none;
+    text-align: center;
+    margin: .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid black;
+    width: 10%;
+    padding: .5rem;
+    background-color: rgb(255, 238, 0);
+    cursor: pointer;
+    
+}
+
+
+
+#btn-cadastro{
+    border-radius: 1rem;
+    text-align: center;
+    margin: .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid black;
+    width: 10%;
+    padding: .5rem;
+    background-color: rgb(255, 238, 0);
+    cursor: pointer;
+}
+
+#btn-cadastro:hover{
+    transform: scale(1.01);
+    background-color: rgb(255, 208, 0);    
+}
+
+#btn-home:hover{
+    transform: scale(1.01); 
+    background-color: rgb(255, 208, 0);  
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 #titulo01 {
+    color: #F5DA2F;
+    text-shadow: 5px 5px black;
     font-size: 2rem;
-    margin-left: 12rem;
-    margin-top: 8rem;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid rgb(5, 5, 5);
+    border-bottom: 0;
+    margin: 5rem 7rem 0 7rem;
+    background: linear-gradient(0.25turn, rgb(66, 57, 57), rgb(59, 45, 68));
 }
 
 #cards{
     border: 2px solid rgb(5, 5, 5);
+    border-top: 0;
     background: linear-gradient(0.25turn, rgb(66, 57, 57), rgb(59, 45, 68));
-    margin: 4rem 10rem 0 10rem;
+    margin: 0 7rem 0 7rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    
 }
 
 .card{
@@ -63,74 +152,50 @@ h1:hover{
 .card p{
     margin-bottom: 1rem;
 }
+
 .card:hover{
     transform: scale(1.05);
 }
 
-/* cadastro */
-
-#cadastro h2{
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 5rem;
-}
-
-#cadastro input{
-    font-size: 1rem;
-    padding: .5rem;
-    border: 2px solid black;
-    border-radius: 1rem;
-    width: 42rem;
-    transition: all .2s ease-in-out;
-}
-
-#cadastro input:hover{
-    transform: scale(1.05);
-}
-
-#cadastro label{
-    margin: 1.5rem 0 .5rem 0;
-    font-size: 1.2rem;
-}
-
-#cadastro form{
-    margin: 1rem 0 0 6rem;
+#btn-detalhes{
     display: flex;
-    flex-direction: column;
-    
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(36, 36, 243);
+    background-color: rgb(231, 225, 225);
+    padding: .2rem;
+    border: 1px solid rgb(102, 101, 101);
+    border-radius: .4rem;
+    box-shadow: 5px 5px 10px rgb(73, 71, 71);
 }
 
-#btnCadastro { 
-    background-color: rgb(12, 223, 12);
-    border-radius: .5rem;
-    width: 5.5rem;
-    font-size: 1.5rem;
-    display: flex;
-    padding-left: 0.5rem;
-    margin: 0 auto;
-    transition: all .2s ease-in-out;
-      
-}
-
-#btnCadastro:hover{
-    transform: scale(1.05);
+#btn-detalhes:hover{
     cursor: pointer;
+    color: #fff;
+    background-color: rgb(36, 36, 243);
 }
 
-#cadastroGeral{
+#btn-editar{
+    margin-top: .5rem;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(0, 184, 0);
+    background-color: rgb(231, 225, 225);
+    padding: .2rem;
+    border: 1px solid rgb(102, 101, 101);
+    border-radius: .4rem;
+    box-shadow: 5px 5px 10px rgb(73, 71, 71);
 }
 
-#cadastroGeral img{
-    margin-top: 6rem;
-    margin-right: 0rem;
+#btn-editar:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(0, 184, 0); 
 }
 
-#imagem{
-    margin-bottom: 2rem;
-}
 
 footer{
     text-align: center;
@@ -146,3 +211,30 @@ footer p a{
     text-decoration: none;
     color: #fffb01;
 }
+
+section#message {
+    margin-top: 0;
+    padding: .7rem 2rem .7rem 7rem;
+    background-color: rgb(116, 233, 95);
+    color: #004d04;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  span#close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  span#close:hover{
+    transform: scale(1.5);
+  }

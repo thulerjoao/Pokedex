@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: roboto, arial;
+    
+}
+
+body{
+    background: linear-gradient(.75turn, #F5DA2F, #D4963B, #EB6F4D, #D43B95, #9E45F7);
+    background-size: 500% 500%;
+    animation: colors 15s ease infinite;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#header{
+    padding: 4rem 1rem 1rem 1rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background: linear-gradient(0.25turn, rgb(66, 57, 57), rgb(59, 45, 68));
+    color: rgb(255, 238, 0);
+}
+h1{
+    text-align: center;
+    font-family: Gloria Hallelujah, Roboto, arial;
+    font-size: 5.5rem;
+    text-shadow: 5px 5px black;
+    transition: all .1s ease-in-out;
+}
+
+
+#menu a{
+    text-decoration: none;
+    color: black;
+}
+#menu{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    background: linear-gradient(0.30turn, rgb(255, 238, 0), rgb(255, 208, 0));
+    padding: 0rem;
+    border-bottom: 1px solid black;     
+}
+
+.gg-pokemon{
+    position: relative;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+
+#btn-home{
+    border-radius: 1rem;
+    font-style: none;
+    text-align: center;
+    margin: .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid black;
+    width: 10%;
+    padding: .5rem;
+    background-color: rgb(255, 238, 0);
+    cursor: pointer;   
+}
+
+#btn-home:hover{
+    transform: scale(1.01); 
+    background-color: rgb(255, 208, 0);
+
+}
+
+#detalhes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#img{
+    margin-top: 2rem;
+}
+
+.card h2{
+    text-align: center;
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+.card p{
+    padding: .5rem;
+}
+
+.card{margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.486);
+    border: 3px solid black;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+    color: #fffb01;
+    font-size: 1.3rem;
+    background: linear-gradient(0.25turn, rgb(66, 57, 57), rgb(59, 45, 68));
+    margin-top: 5rem;
+    padding: 4rem;
+    
+}
+
+footer p a{
+    text-decoration: none;
+    color: #fffb01;
+}

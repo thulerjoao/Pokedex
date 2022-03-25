@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png">
+    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
     <title>Pokedéx</title>
+    
 </head>   
 <body>
+
+    <% if(message != "") {  %>
+        <section id="message">
+            <p><%=message %></p> <span id="close">&times;</span>
+        </section>
+    <% message = ""; }  %>
+
     <header>
+            <div id="menu">
+                <i class="gg-pokemon"></i>
+                <a href="#" id="btn-home">Home</a>
+                <a href="/cadastro" id="btn-cadastro">Cadastro</a>
+            </div>    
         <div id="header">
             <h1>PoKeDéX</h1>
         </div>
@@ -16,69 +31,18 @@
 
     <main>
         <h2 id="titulo01">Listagem de Pokemons:</h2>
-        <section id="cards">
+        <section id="cards" >
             <% pokedex.forEach((item) =>{ %>    
             <div class="card">
-                <img src="<%= item.imagem %>" alt="imagem pokemon">
+                <img src="<%=item.imagem%>" alt="Imagem não encontrada">
                 <h2><%=item.nome%></h2>
                 <p><%=item.descricao%></p>
                 <p>Tipo: <%=item.tipo%></p>
-                <button><a href="/info/<%=item.id%>">Editar Pokemon</a></button>
+                <a href="/detalhes/<%=item.nome%>" id="btn-detalhes">Mais Detalhes</a>
+                <a href="/editar/<%=item.nome%>" id="btn-editar">Editar Pokemon</a>
             </div>
-    
             <% }) %>
-        </section>
-        
-        <section id="cadastroGeral">           
-            
-            <div id="cadastro">
-                
-                <% if(pokemon == undefined){%>
-                <h2>Cadastro:</h2>
-                
-                <form action="/add" method="post">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome">
-
-                    <label for="descricao">Descrição</label>
-                    <input type="text" id="descricao" name="descricao">
-
-                    <label for="tipo">Tipo</label>
-                    <input type="text" id="tipo" name="tipo">
-
-                    <label for="imagem">Link da Imagem</label>
-                    <input type="text" id="imagem" name="imagem">
-
-                    <button id="btnCadastro" type="submit">Enviar</button>
-                </form>
-
-                
-
-                <%} else {%>
-                    
-                <h2>Redefinir Pokemon:</h2>
-                    
-                <form action="/update/<%=pokemon.id%>" method="post">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" value="<%=pokemon.nome%>">
-
-                    <label for="descricao">Descrição</label>
-                    <input type="text" id="descricao" name="descricao" value="<%=pokemon.descricao%>">
-
-                    <label for="tipo">Tipo</label>
-                    <input type="text" id="tipo" name="tipo" value="<%=pokemon.tipo%>">
-
-                    <label for="imagem">Link da Imagem</label>
-                    <input type="text" id="imagem" name="imagem" value="<%=pokemon.imagem%>">
-
-                    <button id="btnCadastro" type="submit">Enviar</button>
-                </form>
-                <%}%>
-            </div>
-            <div>
-                <img src="/img/pngegg.png" alt="imagem cadastro">
-            </div>   
-        </section>    
+        </section>   
     </main>
     <footer>
         <p>
@@ -87,6 +51,6 @@
             - 2022            
         </p>
     </footer>
-    
+    <script type='text/javascript' src="script.js"></script>
 </body>
 </html>

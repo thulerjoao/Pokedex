@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleCadastro.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png">
+    <link href='https://css.gg/pokemon.css' rel='stylesheet'>
+    <title>Pokedéx</title>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="gg-pokemon"></i>
+            <a href="/" id="btn-home">Home</a>
+        </div>    
+        <div id="header">
+            <h1>Editar Pokemon</h1>
+        </div>
+    </header>
+<main>
+    <section id="cadastroGeral">           
+            
+        <div id="cadastro">
+            <h2>Faça as alterações necessárias:</h2>
+           
+            <form action="/atualizar/<%=pokemon.numero%>" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" value="<%=pokemon.nome%>">
+
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao" value="<%=pokemon.descricao%>">
+
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" name="tipo" value="<%=pokemon.tipo%>">
+
+                <label for="tipo">Altura</label>
+                <input type="text" id="Altura" name="Altura" value="<%=pokemon.altura%>">
+
+                <label for="tipo">Peso</label>
+                <input type="text" id="Peso" name="Peso" value="<%=pokemon.peso%>">
+
+                <label for="tipo">Categoria</label>
+                <input type="text" id="Categoria" name="Categoria" value="<%=pokemon.categoria%>">
+
+                <label for="imagem">Link da Imagem</label>
+                <input type="text" id="imagem" name="imagem" value="<%=pokemon.imagem%>">
+                <section id="botoes">
+                    <div>
+                       <a href="editar/<%=pokemon.numero%>" id="btn-editar">Editar</a> 
+                    </div>
+                    <div>
+                        <a href="/excluir/<%=pokemon.nome%>" id="btn-excluir">Excluir</a>
+                    </div> 
+                </section>
+            
+                
+            </form>
+        </div>
+        <div>
+            
+                <img src="<%=pokemon.imagem%>" alt="Imagem não encontrada">
+            
+        </div>   
+    </section> 
+</main>
+<footer>
+    <p>
+        Confira mais projetos -
+        <a href="https://github.com/thulerjoao">github.com/thulerjoao </a>
+        - 2022            
+    </p>
+</footer>
+<script type='text/javascript' src="/cadastro.js"></script>
+</body>
+</html>
