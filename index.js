@@ -122,7 +122,6 @@ app.post("/update/:nome", (req, res) => {
   res.redirect('/');
 });
 
-
 app.get('/excluir/:nome', (req, res) => {
   const name = req.params.nome;
   let newArray = pokedex.filter((item) => item.nome !== name);
@@ -130,16 +129,9 @@ app.get('/excluir/:nome', (req, res) => {
   pokedex = newArray;
   message = `Pokemon excluído.`;
   setTimeout(() => {
-    message = "";
+  message = "";
   }, 1000); 
   res.redirect('/');
 })
-
-
-
-
-
-
-
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
