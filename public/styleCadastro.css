@@ -166,7 +166,7 @@ h1{
     width: 5.5rem;
     font-size: 1.5rem;
     display: flex;
-    padding-left: 1rem;
+    padding-left: .7rem;
     margin: 0 auto;
     transition: all .2s ease-in-out;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.233); 

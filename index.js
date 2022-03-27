@@ -4,9 +4,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded());
 
 let pokedex = [
   { numero: 1,
@@ -108,29 +108,30 @@ app.get('/editar/:nome', (req, res) => {
   res.redirect("/editar");
 });
 
-app.get('/editar/:numero', (req, res)=>{
-  const num = req.params.numero;
-  const pokemon01 = pokedex.find(pokemon => pokemon.nome == num);
-  res.redirect('/')
-})
-
-app.post('/atualizar/:numero', (req, res)=>{
-  const num = +req.params.numero;
-  console.log(num);
+app.post("/update/:nome", (req, res) => {
+  const name = req.params.nome;
   const newPokemon = req.body;
-  const posicao = pokedex.findIndex(pokemon => pokemon.numero == num);
-  console.log(posicao);
-  pokedex[posicao]=newPokemon;
+  const index = pokedex.findIndex(pokemon => pokemon.nome == name);
+  newPokemon.numero = index + 1;
+  pokedex[index] = newPokemon;
+  console.log(pokedex);
+  message = `Pokemon atualizado com sucesso!`;
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   res.redirect('/');
-})
-
+});
 
 
 app.get('/excluir/:nome', (req, res) => {
   const name = req.params.nome;
   let newArray = pokedex.filter((item) => item.nome !== name);
   console.log(newArray);
-  pokedex = newArray; 
+  pokedex = newArray;
+  message = `Pokemon excluído.`;
+  setTimeout(() => {
+    message = "";
+  }, 1000); 
   res.redirect('/');
 })
 

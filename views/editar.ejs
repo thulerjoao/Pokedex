@@ -25,43 +25,47 @@
         <div id="cadastro">
             <h2>Faça as alterações necessárias:</h2>
            
-            <form action="/atualizar/<%=pokemon.numero%>" method="post">
+            <% pokemon.forEach(item =>{ %>
+
+            <form action="/update/<%=item.nome%>" method="post">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" value="<%=pokemon.nome%>">
+                <input type="text" id="nome" name="nome" value="<%=item.nome%>">
 
                 <label for="descricao">Descrição</label>
-                <input type="text" id="descricao" name="descricao" value="<%=pokemon.descricao%>">
+                <input type="text" id="descricao" name="descricao" value="<%=item.descricao%>">
 
                 <label for="tipo">Tipo</label>
-                <input type="text" id="tipo" name="tipo" value="<%=pokemon.tipo%>">
+                <input type="text" id="tipo" name="tipo" value="<%=item.tipo%>">
 
                 <label for="tipo">Altura</label>
-                <input type="text" id="Altura" name="Altura" value="<%=pokemon.altura%>">
+                <input type="text" id="Altura" name="altura" value="<%=item.altura%>">
 
                 <label for="tipo">Peso</label>
-                <input type="text" id="Peso" name="Peso" value="<%=pokemon.peso%>">
+                <input type="text" id="Peso" name="peso" value="<%=item.peso%>">
 
                 <label for="tipo">Categoria</label>
-                <input type="text" id="Categoria" name="Categoria" value="<%=pokemon.categoria%>">
+                <input type="text" id="Categoria" name="categoria" value="<%=item.categoria%>">
+
+                <label for="tipo">Habilidade</label>
+                <input type="text" id="Habilidade" name="habilidade" value="<%=item.habilidade%>">
 
                 <label for="imagem">Link da Imagem</label>
-                <input type="text" id="imagem" name="imagem" value="<%=pokemon.imagem%>">
+                <input type="text" id="imagem" name="imagem" value="<%=item.imagem%>">
                 <section id="botoes">
                     <div>
-                       <a href="editar/<%=pokemon.numero%>" id="btn-editar">Editar</a> 
+                       <button id="btn-editar" type='submit'>Editar</button>
                     </div>
                     <div>
-                        <a href="/excluir/<%=pokemon.nome%>" id="btn-excluir">Excluir</a>
+                        <a href="/excluir/<%=item.nome%>" id="btn-excluir">Excluir</a>
                     </div> 
                 </section>
-            
-                
+            <% }) %>    
             </form>
         </div>
         <div>
-            
-                <img src="<%=pokemon.imagem%>" alt="Imagem não encontrada">
-            
+            <% pokemon.forEach(item =>{ %> 
+                <img src="<%=item.imagem%>" alt="Imagem não encontrada">
+            <% }) %> 
         </div>   
     </section> 
 </main>
