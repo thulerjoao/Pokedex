@@ -40,6 +40,10 @@ h1{
     transition: all .1s ease-in-out;
 }
 
+#numPokemon{
+    font-weight: 600;
+}
+
 
 #menu a{
     text-decoration: none;
