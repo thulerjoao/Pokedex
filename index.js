@@ -38,26 +38,6 @@ let pokedex = [
         peso: "6.9 kg",
         categoria: "Seed",
         habilidade: "Overgrow"},
-
-        { numero: 4,
-          nome: "Charizard",
-          tipo: "Fire / Flying",
-          imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
-          descricao:"It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.",
-          altura:"1.7 m",
-          peso: "90.5 kg",
-          categoria: "flame",
-          habilidade: "Blaze"},
-
-          { numero: 5,
-            nome: "Pikachu",
-            tipo: "Electric",
-            imagem:"https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-            descricao:"Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
-            altura:"0.4 m",
-            peso: "6.0 kg",
-            categoria: "Mouse",
-            habilidade: "Static"}
 ]
 
 
